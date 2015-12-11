@@ -36,17 +36,21 @@
 
 (require 'cc-mode)
 
+(defgroup minizinc nil
+  "Major mode for MiniZinc code"
+  :group 'languages)
+
 ;; (defface font-lock-operator-face
 ;;   '((t :inherit font-lock-builtin-face))
 ;;   "Used for operators."
 ;;   :group 'font-lock-faces)
 
-(defface font-lock-operator-face
+(defface minizinc-operator-face
   '((t (:foreground "dark orange")))
   "Used for operators."
-  :group 'font-lock-faces)
+  :group 'minizinc)
 
-(defvar font-lock-operator-face 'font-lock-operator-face)
+(defvar minizinc-operator-face 'minizinc-operator-face)
 
 
 (defvar minizinc-keywords
@@ -99,7 +103,7 @@
     (,minizinc-builtins-regex . font-lock-builtin-face)
     (,minizinc-types-regex . font-lock-type-face)
     (,minizinc-keywords-regex . font-lock-keyword-face)
-    (,minizinc-operators-regex . font-lock-operator-face)
+    (,minizinc-operators-regex . minizinc-operator-face)
     ))
 
 ;;;###autoload
