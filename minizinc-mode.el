@@ -106,7 +106,7 @@
 (define-derived-mode minizinc-mode java-mode "MiniZinc mode"
   "Major mode for edigint minizinc source file."
   (setq font-lock-defaults '((minizinc-font-lock-keywords)))
-  (setq-local c-basic-offset 0)
+  (set (make-local-variable 'c-basic-offset) 0)
   (setq comment-start "%")
   (setq comment-end "")
   )
