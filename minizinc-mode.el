@@ -34,6 +34,7 @@
 
 ;;; Code:
 
+(require 'cc-mode)
 
 ;; (defface font-lock-operator-face
 ;;   '((t :inherit font-lock-builtin-face))
