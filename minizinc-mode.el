@@ -101,11 +101,10 @@
 
 
 (defvar minizinc-operators
-  (concat "<\\->\\|\\->\\|<-\\|\\\\/\\|xor\\|/\\\\\\|<\\|>="
-          "\\|<=\\|==\\|!=\\|<\\|>\\|=\\|in\\|subset\\|union"
-          "\\|superset\\|diff\\|symdiff\\|\\.\\.\\|intersect"
-          "\\|++\\|+\\|-\\|*\\|/\\|div\\|mod"))
-
+  (concat "<\\->\\|\\->\\|<-\\|\\\\/\\|/\\\\\\|<\\|>=\\|<="
+          "\\|==\\|!=\\|>\\|++\\|+\\|-\\|*\\|/\\|\\.\\.\\|"
+          "=\\|\\<\\(superset\\|diff\\|symdiff\\|intersect"
+          "\\|div\\|mod\\|xor\\|in\\|subset\\|union\\)\\>"))
 
 (defvar minizinc-keywords-regex
   (regexp-opt minizinc-keywords 'words))
