@@ -1,10 +1,10 @@
 ;;; minizinc-mode.el --- Major mode for MiniZinc code -*- lexical-binding: t; -*-
 
-;; Copyright © 2015 Yushi Wang
+;; Copyright © 2015-2017 Yushi Wang
 ;; Authors : Yushi Wang <dot_wangyushi@yeah.net>
 ;; URL : http://github.com/m00nlight/minizinc-mode
 ;; Keywords : languages minizinc
-;; Version : 0.0.1
+;; Version : 0.0.2
 ;; Package-Requires : ((emacs "24.1"))
 
 ;; This file is not part of GNU Emacs.
@@ -79,32 +79,56 @@
   '("var" "constraint" "solve" "satisfy" "maximize"
     "minimize" "output" "par" "of" "where" "ann"
     "annotation" "any" "array" "function" "include"
-    "op" "predicate" "record" "test" "tuple" "type"))
+    "op" "predicate" "record" "test" "tuple" "type"
+    "if" "else" "endif" "false" "true" "in" "then"))
 
 (defvar minizinc-types
-  '("float" "int" "bool" "string" "list" "tuple"))
+  '("float" "int" "bool" "string" "list" "tuple" "set"))
 
+;; Ref: http://www.minizinc.org/downloads/doc-latest/minizinc-tute.pdf
 (defvar minizinc-builtins
-  '("abort" "abs" "acosh" "array_intersect" "array_union"
-    "array1d" "array2d" "array3d" "array4d" "array5d"
-    "array6d" "asin" "assert" "atan" "bool2int" "card"
-    "ceil" "concat" "cos" "cosh" "dom" "dom_array"
-    "dom_size" "fix" "exp" "floor" "index_set"
-    "index_set_1of2" "index_set_2of2" "index_set_1of3"
-    "int2float" "is_fixed" "join" "lb" "lb_array"
-    "length" "ln" "log" "log2" "log10" "min" "max"
-    "pow" "product" "round" "set2array" "show" "show_int"
-    "show_float" "sin" "sinh" "sqrt" "sum" "tan" "tanh"
-    "trace" "ub" "ub_array"
+  '(;; A
+    "abs" "acos" "acosh" "aisnh" "alldifferent" "ann" "annotation" "array1d"
+    "array2d" "arraynd" "asin" "assert" "assignment" "atan" "atanh"
+    ;; B
+    "bool2int" "bool_search"
+    ;; C
+    "card" "cos" "cosh" "cumulative" "ceil"
+    ;; D
+    "diff" "disjunctive" "dom" "domain" "dom_array"
+    ;; E
+    "exists" "exp"
+    ;; F
+    "first_fail" "fix" "fixed" "forall"
+    ;; I
+    "ifall" "index_set" "index_set_1of2" "index_set_2of2" "indomain_median"
+    "indomain_min" "indomain_random" "indomain_split" "input_order" "int2float"
+    "inter" "int_search" "inverse"
+    ;; L
+    "lb" "lb_array" "let" "ln" "log" "log2" "log10"
+    ;; M
+    "max" "min" "mzn-g12fd"
+    ;; P
+    "par" "pow" "predict" "product"
+    ;; R
+    "regular"
+    ;; S
+    "sex_search" "set_search" "show" "show_float" "show_int" "sin" "sinh"
+    "smallest" "sqrt" "sum"
+    ;; T
+    "table" "tan" "tanh" "test" "trace"
+    ;; U
+    "ub" "ub_array" "unfixed"
+    ;; X
+    "xorall"
     ))
-
 
 
 (defvar minizinc-operators
   (concat "<\\->\\|\\->\\|<-\\|\\\\/\\|/\\\\\\|<\\|>=\\|<="
           "\\|==\\|!=\\|>\\|++\\|+\\|-\\|*\\|/\\|\\.\\.\\|"
           "=\\|\\<\\(superset\\|diff\\|symdiff\\|intersect"
-          "\\|div\\|mod\\|xor\\|in\\|subset\\|union\\)\\>"))
+          "\\|div\\|mod\\|xor\\|in\\|subset\\|union\\|not\\)\\>"))
 
 (defvar minizinc-keywords-regex
   (regexp-opt minizinc-keywords 'words))

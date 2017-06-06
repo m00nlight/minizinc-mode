@@ -1,7 +1,7 @@
-# MiniZinc mode 
+# MiniZinc mode
 
-minizinc-mode is offered as a major mode for editing [minizinc][1] model file. 
-Currently it only offer syntax highlight. 
+minizinc-mode is offered as a major mode for editing [minizinc][1] model file.
+Currently it only offer syntax highlight.
 
 # Installation and Configuration
 
@@ -21,7 +21,7 @@ In your `~/.emacs` file or emacs start file, add the following lines
 
 ## Install from melpa
 
-Add the following to your emacs init file, normally `~/.emacs` 
+Add the following to your emacs init file, normally `~/.emacs`
 
 ```elisp
 (require 'package)
@@ -31,8 +31,8 @@ Add the following to your emacs init file, normally `~/.emacs`
 (package-initialize)
 ```
 
-In your emacs, Use `M-x`, `package-install` then type `minizinc-mode` to 
-install the latest version from [melpa][https://melpa.org]. 
+In your emacs, Use `M-x`, `package-install` then type `minizinc-mode` to
+install the latest version from [melpa][https://melpa.org].
 
 Then add the following line to your emacs init file for configuration.
 
@@ -42,14 +42,14 @@ Then add the following line to your emacs init file for configuration.
 ```
 
 
-# TODO 
+# TODO
 
 - [ ] Implement keywords auto complete
 - [ ] Implement run model and show result in echo area or another buffer
 
 # License
 
-Copyright © 2015 by Yushi Wang
+Copyright © 2015-2017 by Yushi Wang
 
 Distributed under the GNU General Publicense, view LICENSE for details.
 
