@@ -144,7 +144,7 @@
 
 (defvar minizinc-font-lock-keywords
   `(
-    ("%.*" . font-lock-comment-face)
+    ("\\(%[^\n]*\\)$" . font-lock-comment-face)
     (,minizinc-builtins-regex . font-lock-builtin-face)
     (,minizinc-types-regex . font-lock-type-face)
     (,minizinc-keywords-regex . font-lock-keyword-face)
@@ -154,10 +154,13 @@
 ;;;###autoload
 (define-derived-mode minizinc-mode java-mode "MiniZinc mode"
   "Major mode for edigint minizinc source file."
+  (setq mode-name "minizinc-mode")
   (setq font-lock-defaults '((minizinc-font-lock-keywords)))
   (set (make-local-variable 'c-basic-offset) 0)
   (setq comment-start "%")
   (setq comment-end "")
+  (modify-syntax-entry ?% "< b" minizinc-mode-syntax-table)
+  (modify-syntax-entry ?\n "> b" minizinc-mode-syntax-table)
   )
 
 
