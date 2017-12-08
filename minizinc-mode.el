@@ -80,7 +80,8 @@
     "minimize" "output" "par" "of" "where" "ann"
     "annotation" "any" "array" "function" "include"
     "op" "predicate" "record" "test" "tuple" "type"
-    "if" "else" "endif" "false" "true" "in" "then"))
+    "if" "else" "endif" "false" "true" "in" "then"
+    "opt"))
 
 (defvar minizinc-types
   '("float" "int" "bool" "string" "list" "tuple" "set"))
