@@ -41,6 +41,13 @@ Then add the following line to your emacs init file for configuration.
 (add-to-list 'auto-mode-alist '("\\.mzn\\'" . minizinc-mode))
 ```
 
+## Pretty-render logic symbols
+
+Some logic symbols can be rendered as Unicode characters. To enable
+this, customize the variable `minizinc-font-lock-symbols` to true. You
+can change the replacements by customizing the variable
+`minizinc-font-lock-symbols-alist`.
+
 
 # TODO
 
