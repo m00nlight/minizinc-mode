@@ -81,6 +81,10 @@ alignment and can thus lead to nasty surprises with regards to layout."
     ("not" . "¬")
     ("xor" . "⊻")
     ("in"  . "∈")
+    (">="  . "≥")
+    ("<="  . "≤")
+    (".." . "…")
+    ("++" . "⧺")
     ("exists" . "∃")
     ("forall" . "∀"))
   "Alist mapping MiniZinc symbols to chars.
