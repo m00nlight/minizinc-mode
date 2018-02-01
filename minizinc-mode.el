@@ -254,6 +254,30 @@ Regexp match data 0 points to the chars."
 (setq minizinc-operators nil)
 (setq minizinc-operators-regex nil)
 
+
+;;;;;;;;;;;;;;
+;; Flycheck ;;
+;;;;;;;;;;;;;;
+
+(when (require 'flycheck nil :noerror)
+  (flycheck-define-checker mzn2fzn
+  "A MiniZinc syntax checker using the MiniZinc compiler.
+
+  See URL `http://www.minizinc.org/'."
+  :command ("mzn2fzn" "--model-check-only" source)
+  :error-patterns
+  ((error line-start (file-name) ":" line ":\n"
+          (* any) "\n"
+          (* any) "\n"
+          "Error: " (message) line-end)
+   (error line-start (file-name) ":" line ":\n"
+          "MiniZinc:" (message) line-end))
+    :modes minizinc-mode)
+  (add-to-list 'flycheck-checkers 'mzn2fzn)
+  (add-hook 'minizinc-mode-hook
+            (lambda ()
+              (flycheck-mode))))
+
 (provide 'minizinc-mode)
 
 ;; Local Variable:
