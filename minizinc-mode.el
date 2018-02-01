@@ -86,6 +86,7 @@ alignment and can thus lead to nasty surprises with regards to layout."
     (".." . "…")
     ("++" . "⧺")
     ("exists" . "∃")
+    ("sum" . "Σ")
     ("forall" . "∀"))
   "Alist mapping MiniZinc symbols to chars.
 Each element has the form (STRING . COMPONENTS) or (STRING
