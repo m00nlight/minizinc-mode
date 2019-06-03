@@ -14,8 +14,8 @@ git clone $THiS_REPOSITORY
 In your `~/.emacs` file or emacs start file, add the following lines
 
 ```elisp
-(require 'minizinc-mode)
 (add-to-list 'load-path $PATH_OF_CLONED_DIR)
+(require 'minizinc-mode)
 (add-to-list 'auto-mode-alist '("\\.mzn\\'" . minizinc-mode))
 ```
 
