@@ -264,7 +264,7 @@ Regexp match data 0 points to the chars."
   "A MiniZinc syntax checker using the MiniZinc compiler.
 
   See URL `http://www.minizinc.org/'."
-  :command ("mzn2fzn" "--model-check-only" source)
+  :command ("minizinc" "-c" "--solver" "--model-check-only" "org.minizinc.mzn-fzn" source)
   :error-patterns
   ((error line-start (file-name) ":" line ":\n"
           (* any) "\n"
